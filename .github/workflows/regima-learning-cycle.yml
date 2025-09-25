@@ -57,7 +57,7 @@ jobs:
         python scripts/regima_ai_processor.py
         
     - name: Upload AI Response Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: regima-ai-responses
         path: |
