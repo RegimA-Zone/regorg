@@ -1,0 +1,45 @@
+{
+  "models": {
+    "openai": {
+      "model": "gpt-4",
+      "max_tokens": 2000,
+      "temperature": 0.7,
+      "description": "Primary model for comprehensive analysis and strategic insights"
+    },
+    "anthropic": {
+      "model": "claude-3-sonnet-20240229",
+      "max_tokens": 2000,
+      "temperature": 0.7,
+      "description": "Alternative model for detailed professional guidance analysis"
+    },
+    "google": {
+      "model": "gemini-pro",
+      "max_tokens": 2000,
+      "temperature": 0.7,
+      "description": "Supplementary model for zone concept framework analysis"
+    }
+  },
+  "analysis_prompts": {
+    "zone_concept": "Analyze the Zone Concept framework data and provide strategic recommendations for advancement. Focus on the three core elements: anti-inflammatory, anti-oxidant, and rejuvenation protocols. Consider relevance scores, current technologies, and future development opportunities.",
+    "consciousness": "Examine the organizational consciousness evolution data and provide insights on development trajectory. Analyze current state, evolution level, and growth indicators to recommend next steps for consciousness advancement.",
+    "guidance": "Review the professional guidance framework and provide actionable enhancement recommendations. Focus on focus areas, current insights, and implementation strategies for improving client outcomes and organizational wisdom.",
+    "comprehensive": "Conduct a holistic analysis of the RegimA organizational learning cycle, integrating all aspects: Zone Concept framework, consciousness evolution, and professional guidance. Provide strategic recommendations for the complete organizational development cycle."
+  },
+  "output_formats": {
+    "markdown": {
+      "enabled": true,
+      "template": "detailed",
+      "sections": ["executive_summary", "key_findings", "recommendations", "next_steps"]
+    },
+    "json": {
+      "enabled": true,
+      "structured": true,
+      "include_metadata": true
+    },
+    "summary": {
+      "enabled": true,
+      "max_length": 1000,
+      "key_points": 5
+    }
+  }
+}

@@ -25,3 +25,50 @@ Contains comprehensive organizational consciousness and cycle tracking with stru
 
 - `cycleCompletion.json` - Basic cycle completion insights and progress tracking
 - `regcyc.json` - Comprehensive organizational consciousness and zone concept implementation tracking
+- `.github/workflows/regima-learning-cycle.yml` - GitHub Actions workflow for AI-powered analysis
+- `scripts/regima_ai_processor.py` - Python script for generating AI responses from organizational data
+- `outputs/` - Directory for generated AI analysis reports
+
+## AI-Powered Learning Cycle Analysis
+
+This repository includes automated AI analysis capabilities that process the organizational consciousness data to generate insights and recommendations.
+
+### GitHub Actions Workflow
+
+The `regima-learning-cycle.yml` workflow automatically:
+
+- **Triggers**: Runs on pushes to main (when JSON files change), pull requests, weekly schedule, or manual dispatch
+- **Processes**: Analyzes organizational consciousness data and Zone Concept framework
+- **Generates**: AI-powered insights, recommendations, and strategic guidance
+- **Outputs**: Creates detailed analysis reports and automatically opens GitHub issues with findings
+- **Artifacts**: Stores generated reports for download and review
+
+### Analysis Types
+
+The workflow supports different analysis modes:
+
+- **Full Analysis**: Comprehensive analysis of all organizational aspects
+- **Zone Concept Only**: Focused analysis of the Zone Concept framework
+- **Consciousness Only**: Analysis of organizational consciousness evolution
+- **Guidance Only**: Professional guidance and actionable insights
+
+### Manual Execution
+
+Run the AI processor locally:
+
+```bash
+# Full analysis (default)
+python scripts/regima_ai_processor.py
+
+# Specific analysis type
+ANALYSIS_TYPE=zone_concept_only python scripts/regima_ai_processor.py
+```
+
+### Generated Outputs
+
+The AI analysis generates:
+
+- Individual analysis reports (Markdown format)
+- Comprehensive JSON data for programmatic access
+- Summary insights for quick review
+- Automated GitHub issues with key findings
