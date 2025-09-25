@@ -1,25 +1,21 @@
 name: RegimA Organizational Learning Cycle AI Response Generator
 
 on:
-  # Trigger on pushes to main branch
   push:
     branches: [ main ]
     paths: 
       - 'regcyc.json'
       - 'cycleCompletion.json'
   
-  # Trigger on pull requests
   pull_request:
     branches: [ main ]
     paths:
       - 'regcyc.json'
       - 'cycleCompletion.json'
   
-  # Scheduled trigger (weekly on Mondays at 9 AM UTC)
   schedule:
     - cron: '0 9 * * 1'
   
-  # Manual trigger
   workflow_dispatch:
     inputs:
       analysis_type:
@@ -75,35 +71,36 @@ jobs:
       with:
         script: |
           const fs = require('fs');
-          const path = require('path');
           
-          // Read the generated insights
-          let insightsContent = '';
+          let insightsContent = 'AI insights generation completed. Check artifacts for detailed outputs.';
           try {
             insightsContent = fs.readFileSync('outputs/ai_insights_summary.md', 'utf8');
           } catch (error) {
-            insightsContent = 'AI insights generation completed. Check artifacts for detailed outputs.';
+            console.log('Could not read insights file, using default message');
           }
           
-          // Create an issue with the insights
+          const issueBody = [
+            '# RegimA Organizational Learning Cycle AI Analysis',
+            '',
+            '## Generated Insights',
+            '',
+            insightsContent,
+            '',
+            '## Context',
+            'This analysis was automatically generated based on the organizational consciousness data and Zone Concept framework in the repository.',
+            '',
+            `**Trigger:** ${context.eventName}`,
+            `**Branch:** ${context.ref}`,
+            `**Commit:** ${context.sha}`,
+            '',
+            `Check the [workflow artifacts](${context.payload.repository.html_url}/actions/runs/${context.runId}) for detailed outputs.`
+          ].join('\n');
+          
           const issue = await github.rest.issues.create({
             owner: context.repo.owner,
             repo: context.repo.repo,
             title: `RegimA Learning Cycle AI Analysis - ${new Date().toISOString().split('T')[0]}`,
-            body: `# RegimA Organizational Learning Cycle AI Analysis
-            
-## Generated Insights
-
-${insightsContent}
-
-## Context
-This analysis was automatically generated based on the organizational consciousness data and Zone Concept framework in the repository.
-
-**Trigger:** ${context.eventName}
-**Branch:** ${context.ref}
-**Commit:** ${context.sha}
-
-Check the [workflow artifacts](${context.payload.repository.html_url}/actions/runs/${context.runId}) for detailed outputs.`,
+            body: issueBody,
             labels: ['ai-analysis', 'learning-cycle', 'regima-org']
           });
           
