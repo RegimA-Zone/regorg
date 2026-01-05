@@ -1,0 +1,94 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-01-05T18:57:32.626538",
+  "assessments": [
+    {
+      "assessment_id": "ASM-A1BA9014",
+      "client_id": "CLI-8960835B",
+      "date": "2026-01-05T18:57:32.625959",
+      "practitioner": "Dr. Sarah Chen",
+      "name": "Emily Johnson",
+      "email": "emily.j@email.com",
+      "phone": "555-0123",
+      "date_of_birth": "1985-03-15",
+      "skin_type": "combination",
+      "fitzpatrick_type": "type_3",
+      "primary_concerns": [
+        "fine_lines",
+        "wrinkles",
+        "loss_of_firmness",
+        "pigmentation",
+        "uneven_tone",
+        "rough_texture",
+        "dullness",
+        "dark_circles",
+        "puffiness"
+      ],
+      "secondary_concerns": [
+        "acne",
+        "enlarged_pores",
+        "redness",
+        "sensitivity",
+        "irritation",
+        "dryness",
+        "dehydration"
+      ],
+      "zone_focus": [
+        "rejuvenation",
+        "anti_inflammatory",
+        "anti_oxidant"
+      ],
+      "medical_conditions": [],
+      "lifestyle_factors": [
+        "high_stress",
+        "screen_time"
+      ],
+      "current_products": [
+        "Basic cleanser",
+        "Moisturizer",
+        "Occasional sunscreen"
+      ],
+      "allergies": [],
+      "medications": [],
+      "answers": {
+        "age_range": "",
+        "gender": "",
+        "morning_skin_feel": "slightly_oily",
+        "pore_visibility": "tzone",
+        "midday_shine": "tzone_only",
+        "reaction_to_products": "sometimes",
+        "fine_lines_concern": 4,
+        "wrinkle_concern": 0,
+        "firmness_concern": 0,
+        "pigmentation_concern": 5,
+        "redness_concern": 0,
+        "acne_concern": 2,
+        "texture_concern": 4,
+        "hydration_concern": 3,
+        "sensitivity_concern": 3,
+        "dullness_concern": 0,
+        "pore_concern": 0,
+        "dark_circles_concern": 4,
+        "sun_reaction": "sometimes_burn",
+        "tanning_ability": "medium",
+        "previous_professional_treatments": [],
+        "product_reactions": [],
+        "ingredient_allergies": []
+      },
+      "treatment_goals": [
+        "Even out skin tone",
+        "Reduce fine lines",
+        "Brighter complexion",
+        "Address dark circles"
+      ],
+      "budget_range": "",
+      "time_commitment": "",
+      "visual_observations": "Visible pigmentation on cheeks, fine lines around eyes, combination T-zone",
+      "practitioner_notes": "Good candidate for pigmentation treatment protocol. Consider Power Peel series.",
+      "contraindications": [],
+      "photo_consent": false,
+      "marketing_consent": false,
+      "treatment_consent": false
+    }
+  ]
+}

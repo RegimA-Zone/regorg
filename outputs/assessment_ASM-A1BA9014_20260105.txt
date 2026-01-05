@@ -1,0 +1,116 @@
+
+═══════════════════════════════════════════════════════════════════════════════
+                         RÉGIMA CLIENT SKIN ASSESSMENT
+═══════════════════════════════════════════════════════════════════════════════
+
+ASSESSMENT ID: ASM-A1BA9014
+DATE: 2026-01-05
+PRACTITIONER: Dr. Sarah Chen
+
+───────────────────────────────────────────────────────────────────────────────
+                              CLIENT INFORMATION
+───────────────────────────────────────────────────────────────────────────────
+Name: Emily Johnson
+Email: emily.j@email.com
+Phone: 555-0123
+DOB: 1985-03-15
+
+───────────────────────────────────────────────────────────────────────────────
+                              SKIN ANALYSIS
+───────────────────────────────────────────────────────────────────────────────
+SKIN TYPE: COMBINATION
+FITZPATRICK TYPE: Type 3
+
+ZONE CONCEPT FOCUS:
+  → Rejuvenation
+  → Anti-Inflammatory
+  → Anti-Oxidant
+
+PRIMARY CONCERNS:
+  • Fine Lines
+  • Wrinkles
+  • Loss Of Firmness
+  • Pigmentation
+  • Uneven Tone
+  • Rough Texture
+  • Dullness
+  • Dark Circles
+  • Puffiness
+
+SECONDARY CONCERNS:
+  • Acne
+  • Enlarged Pores
+  • Redness
+  • Sensitivity
+  • Irritation
+  • Dryness
+  • Dehydration
+
+───────────────────────────────────────────────────────────────────────────────
+                            HEALTH & LIFESTYLE
+───────────────────────────────────────────────────────────────────────────────
+MEDICAL CONDITIONS:
+  None reported
+
+LIFESTYLE FACTORS:
+  • High Stress
+  • Screen Time
+
+CURRENT PRODUCTS:
+  • Basic cleanser
+  • Moisturizer
+  • Occasional sunscreen
+
+ALLERGIES:
+  None reported
+
+MEDICATIONS:
+  None reported
+
+───────────────────────────────────────────────────────────────────────────────
+                            TREATMENT GOALS
+───────────────────────────────────────────────────────────────────────────────
+  • Even out skin tone
+  • Reduce fine lines
+  • Brighter complexion
+  • Address dark circles
+
+───────────────────────────────────────────────────────────────────────────────
+                         PRACTITIONER OBSERVATIONS
+───────────────────────────────────────────────────────────────────────────────
+Visible pigmentation on cheeks, fine lines around eyes, combination T-zone
+
+NOTES:
+Good candidate for pigmentation treatment protocol. Consider Power Peel series.
+
+───────────────────────────────────────────────────────────────────────────────
+                           CONTRAINDICATIONS
+───────────────────────────────────────────────────────────────────────────────
+  None identified
+
+═══════════════════════════════════════════════════════════════════════════════
+                         ZONE CONCEPT RECOMMENDATION
+═══════════════════════════════════════════════════════════════════════════════
+
+Based on this assessment, focus treatment on:
+
+ANTI-INFLAMMATORY PILLAR
+  The client shows signs of inflammation-related concerns. Prioritize calming,
+  soothing products that reduce redness and sensitivity while protecting the
+  skin barrier.
+
+ANTI-OXIDANT PILLAR
+  Environmental protection is key for this client. Focus on products that
+  neutralize free radicals, protect against UV and pollution damage, and
+  address pigmentation concerns.
+
+REJUVENATION PILLAR
+  Cell renewal and repair are priorities. Include products that stimulate
+  collagen production, improve skin texture, and address signs of ageing.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Next Step: Generate a personalized treatment protocol using the Protocol Builder
+           with client ID: CLI-8960835B
+
+═══════════════════════════════════════════════════════════════════════════════
