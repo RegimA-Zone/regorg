@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RegimA Zone — Slack Workspace Directory</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            slack: {
+              purple: '#4A154B',
+              aubergine: '#3F0F40',
+              green:  '#2BAC76',
+              yellow: '#ECB22E',
+              red:    '#E01E5A',
+              blue:   '#1D9BD1',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Lato', 'Segoe UI', sans-serif; }
+    .avatar-circle {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1rem; color: #fff;
+      flex-shrink: 0;
+    }
+    .channel-badge {
+      display: inline-block;
+      background: #f1f3f4;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 0.75rem;
+      color: #444;
+      margin: 2px;
+    }
+    .private-badge {
+      background: #fce8f3;
+      color: #8e3370;
+    }
+    .member-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(74,21,75,0.12); }
+    .member-card { transition: transform 0.15s, box-shadow 0.15s; }
+    .dept-chip {
+      display: inline-block;
+      border-radius: 9999px;
+      padding: 2px 10px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .tab-btn { transition: all 0.15s; }
+    .tab-btn.active { border-bottom: 3px solid #4A154B; color: #4A154B; font-weight: 700; }
+    input:focus { outline: none; box-shadow: 0 0 0 3px rgba(74,21,75,0.15); }
+    .channel-card:hover { background: #f8f0f8; }
+    .channel-card { transition: background 0.15s; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-slack-purple text-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.8 122.8" class="w-7 h-7">
+            <path d="M25.8 77.6c0 7.1-5.8 12.9-12.9 12.9S0 84.7 0 77.6s5.8-12.9 12.9-12.9h12.9v12.9zm6.5 0c0-7.1 5.8-12.9 12.9-12.9s12.9 5.8 12.9 12.9v32.3c0 7.1-5.8 12.9-12.9 12.9s-12.9-5.8-12.9-12.9V77.6z" fill="#E01E5A"/>
+            <path d="M45.2 25.8c-7.1 0-12.9-5.8-12.9-12.9S38.1 0 45.2 0s12.9 5.8 12.9 12.9v12.9H45.2zm0 6.5c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9H12.9C5.8 58.1 0 52.3 0 45.2s5.8-12.9 12.9-12.9h32.3z" fill="#36C5F0"/>
+            <path d="M97 45.2c0-7.1 5.8-12.9 12.9-12.9s12.9 5.8 12.9 12.9-5.8 12.9-12.9 12.9H97V45.2zm-6.5 0c0 7.1-5.8 12.9-12.9 12.9s-12.9-5.8-12.9-12.9V12.9C64.7 5.8 70.5 0 77.6 0s12.9 5.8 12.9 12.9v32.3z" fill="#2EB67D"/>
+            <path d="M77.6 97c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9-12.9-5.8-12.9-12.9V97h12.9zm0-6.5c-7.1 0-12.9-5.8-12.9-12.9s5.8-12.9 12.9-12.9h32.3c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9H77.6z" fill="#ECB22E"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold leading-tight">RegimA Zone</h1>
+          <p class="text-purple-200 text-xs">Slack Workspace Directory</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 text-sm text-purple-200">
+        <span id="member-count-header" class="font-semibold text-white"></span>
+        <span>•</span>
+        <span id="channel-count-header" class="font-semibold text-white"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 py-8">
+
+    <!-- Search + Filters -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 mb-6 flex flex-col sm:flex-row gap-3 items-center">
+      <div class="relative flex-1 w-full">
+        <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+        </svg>
+        <input id="search-input" type="text" placeholder="Search members or channels…"
+          class="w-full pl-9 pr-4 py-2 rounded-lg border border-gray-200 text-sm focus:border-slack-purple bg-gray-50" />
+      </div>
+      <select id="dept-filter"
+        class="text-sm border border-gray-200 rounded-lg px-3 py-2 bg-gray-50 focus:border-slack-purple focus:outline-none focus:shadow-[0_0_0_3px_rgba(74,21,75,0.15)] w-full sm:w-auto">
+        <option value="">All Departments</option>
+      </select>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex gap-0 border-b border-gray-200 mb-6">
+      <button class="tab-btn active px-5 py-3 text-sm" data-tab="members">
+        👤 Members <span id="members-tab-count" class="ml-1 text-gray-400 text-xs"></span>
+      </button>
+      <button class="tab-btn px-5 py-3 text-sm text-gray-500" data-tab="channels">
+        # Channels <span id="channels-tab-count" class="ml-1 text-gray-400 text-xs"></span>
+      </button>
+    </div>
+
+    <!-- Members Grid -->
+    <div id="members-view">
+      <div id="members-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      <p id="no-members" class="hidden text-center text-gray-400 py-12 text-sm">No members match your search.</p>
+    </div>
+
+    <!-- Channels List -->
+    <div id="channels-view" class="hidden">
+      <div id="channels-list" class="flex flex-col gap-2"></div>
+      <p id="no-channels" class="hidden text-center text-gray-400 py-12 text-sm">No channels match your search.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-xs text-gray-400 py-6">
+    RegimA Zone Slack Workspace Directory · Generated from <code>slack/workspace_directory.json</code>
+  </footer>
+
+  <script>
+    let allMembers = [];
+    let allChannels = [];
+    let departments = [];
+    let activeTab = 'members';
+
+    const DEPT_COLORS = {
+      'Leadership':            { bg: '#f3e8ff', text: '#6b21a8' },
+      'Education & Training':  { bg: '#dbeafe', text: '#1e40af' },
+      'Product Development':   { bg: '#d1fae5', text: '#065f46' },
+      'Client Services':       { bg: '#fef3c7', text: '#92400e' },
+      'Research & Innovation': { bg: '#fee2e2', text: '#991b1b' },
+      'Operations':            { bg: '#e0f2fe', text: '#0369a1' },
+    };
+
+    function deptChipHTML(dept) {
+      const c = DEPT_COLORS[dept] || { bg: '#f3f4f6', text: '#374151' };
+      return `<span class="dept-chip" style="background:${c.bg};color:${c.text}">${dept}</span>`;
+    }
+
+    function memberCardHTML(m) {
+      return `
+        <div class="member-card bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex flex-col gap-3"
+             data-dept="${m.department}" data-name="${m.name.toLowerCase()}" data-handle="${m.display_name.toLowerCase()}">
+          <div class="flex items-center gap-3">
+            <div class="avatar-circle" style="background:${m.avatar_color}">${m.avatar_initials}</div>
+            <div class="min-w-0">
+              <div class="font-semibold text-gray-900 text-sm truncate">${m.name}${m.is_admin ? ' <span class="text-slack-purple text-xs font-normal">Admin</span>' : ''}</div>
+              <div class="text-gray-500 text-xs truncate">${m.title}</div>
+            </div>
+          </div>
+          <div>${deptChipHTML(m.department)}</div>
+          <div class="flex items-center gap-2 text-xs text-gray-400">
+            <svg class="w-3.5 h-3.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            <span class="truncate">${m.email}</span>
+          </div>
+          <div class="flex items-center gap-1.5 text-xs text-slack-purple font-medium">
+            <svg class="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 122.8 122.8" fill="currentColor">
+              <path d="M25.8 77.6c0 7.1-5.8 12.9-12.9 12.9S0 84.7 0 77.6s5.8-12.9 12.9-12.9h12.9v12.9z" fill="#E01E5A"/>
+              <path d="M45.2 25.8c-7.1 0-12.9-5.8-12.9-12.9S38.1 0 45.2 0s12.9 5.8 12.9 12.9v12.9H45.2z" fill="#36C5F0"/>
+              <path d="M97 45.2c0-7.1 5.8-12.9 12.9-12.9s12.9 5.8 12.9 12.9-5.8 12.9-12.9 12.9H97V45.2z" fill="#2EB67D"/>
+              <path d="M77.6 97c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9-12.9-5.8-12.9-12.9V97h12.9z" fill="#ECB22E"/>
+            </svg>
+            @${m.display_name}
+          </div>
+        </div>`;
+    }
+
+    function channelCardHTML(ch) {
+      const icon = ch.is_private ? '🔒' : '#';
+      const badgeClass = ch.is_private ? 'channel-badge private-badge' : 'channel-badge';
+      return `
+        <div class="channel-card bg-white rounded-xl border border-gray-100 shadow-sm px-5 py-4 flex items-start gap-4"
+             data-name="${ch.name.toLowerCase()}" data-topic="${(ch.topic||'').toLowerCase()}" data-category="${ch.category.toLowerCase()}">
+          <div class="w-9 h-9 rounded-lg bg-slack-purple/10 text-slack-purple flex items-center justify-center font-bold text-base flex-shrink-0">
+            ${icon}
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="font-semibold text-gray-900 text-sm">#${ch.name}</span>
+              <span class="${badgeClass}">${ch.category}</span>
+              ${ch.is_private ? '<span class="channel-badge private-badge">Private</span>' : ''}
+            </div>
+            <p class="text-gray-500 text-xs mt-1 truncate">${ch.topic}</p>
+          </div>
+          <div class="text-right flex-shrink-0 text-xs text-gray-400">
+            <div class="font-semibold text-gray-700">${ch.member_count}</div>
+            <div>members</div>
+          </div>
+        </div>`;
+    }
+
+    function renderMembers(search, dept) {
+      const grid = document.getElementById('members-grid');
+      const noMsg = document.getElementById('no-members');
+      const s = search.toLowerCase();
+      const filtered = allMembers.filter(m =>
+        (!dept || m.department === dept) &&
+        (!s || m.name.toLowerCase().includes(s) || m.display_name.toLowerCase().includes(s) ||
+               m.title.toLowerCase().includes(s) || m.department.toLowerCase().includes(s))
+      );
+      grid.innerHTML = filtered.map(memberCardHTML).join('');
+      noMsg.classList.toggle('hidden', filtered.length > 0);
+      document.getElementById('members-tab-count').textContent = `(${filtered.length})`;
+    }
+
+    function renderChannels(search) {
+      const list = document.getElementById('channels-list');
+      const noMsg = document.getElementById('no-channels');
+      const s = search.toLowerCase();
+      const filtered = allChannels.filter(ch =>
+        !s || ch.name.toLowerCase().includes(s) || (ch.topic||'').toLowerCase().includes(s) ||
+              ch.category.toLowerCase().includes(s)
+      );
+      list.innerHTML = filtered.map(channelCardHTML).join('');
+      noMsg.classList.toggle('hidden', filtered.length > 0);
+      document.getElementById('channels-tab-count').textContent = `(${filtered.length})`;
+    }
+
+    function update() {
+      const search = document.getElementById('search-input').value;
+      const dept = document.getElementById('dept-filter').value;
+      if (activeTab === 'members') renderMembers(search, dept);
+      else renderChannels(search);
+    }
+
+    async function init() {
+      let data;
+      try {
+        const resp = await fetch('workspace_directory.json');
+        data = await resp.json();
+      } catch (e) {
+        // Fallback: try relative path
+        console.warn('Could not load workspace_directory.json', e);
+        return;
+      }
+
+      allMembers  = data.members  || [];
+      allChannels = data.channels || [];
+      departments = data.departments || [];
+
+      document.getElementById('member-count-header').textContent  = `${allMembers.length} Members`;
+      document.getElementById('channel-count-header').textContent = `${allChannels.length} Channels`;
+
+      // Populate department filter
+      const sel = document.getElementById('dept-filter');
+      departments.forEach(d => {
+        const opt = document.createElement('option');
+        opt.value = d; opt.textContent = d;
+        sel.appendChild(opt);
+      });
+
+      update();
+    }
+
+    // Event listeners
+    document.getElementById('search-input').addEventListener('input', update);
+    document.getElementById('dept-filter').addEventListener('change', update);
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeTab = btn.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('members-view').classList.toggle('hidden', activeTab !== 'members');
+        document.getElementById('channels-view').classList.toggle('hidden', activeTab !== 'channels');
+        // Reset dept filter on channels tab
+        if (activeTab === 'channels') {
+          document.getElementById('dept-filter').style.display = 'none';
+        } else {
+          document.getElementById('dept-filter').style.display = '';
+        }
+        update();
+      });
+    });
+
+    init();
+  </script>
+</body>
+</html>

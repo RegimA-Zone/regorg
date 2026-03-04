@@ -1,0 +1,263 @@
+{
+  "workspace": {
+    "name": "RegimA Zone",
+    "domain": "regima-zone",
+    "description": "RegimA's professional skincare education and organizational development workspace",
+    "icon": "https://avatars.githubusercontent.com/u/173102569?v=4",
+    "member_count": 10,
+    "channel_count": 10,
+    "created_at": "2024-01-15"
+  },
+  "departments": [
+    "Leadership",
+    "Education & Training",
+    "Product Development",
+    "Client Services",
+    "Research & Innovation",
+    "Operations"
+  ],
+  "channels": [
+    {
+      "id": "C001",
+      "name": "general",
+      "topic": "Company-wide announcements and updates",
+      "purpose": "General communication for the whole workspace",
+      "member_count": 24,
+      "is_private": false,
+      "category": "General"
+    },
+    {
+      "id": "C002",
+      "name": "zone-concept-training",
+      "topic": "Zone Concept education and protocol sharing",
+      "purpose": "Share training materials and best practices for the Zone Concept framework",
+      "member_count": 18,
+      "is_private": false,
+      "category": "Education & Training"
+    },
+    {
+      "id": "C003",
+      "name": "product-updates",
+      "topic": "Latest product developments and formulation news",
+      "purpose": "Product launch announcements and formulation updates",
+      "member_count": 20,
+      "is_private": false,
+      "category": "Product Development"
+    },
+    {
+      "id": "C004",
+      "name": "client-success",
+      "topic": "Client case studies and treatment outcomes",
+      "purpose": "Share client success stories and treatment protocol outcomes",
+      "member_count": 15,
+      "is_private": false,
+      "category": "Client Services"
+    },
+    {
+      "id": "C005",
+      "name": "research-innovation",
+      "topic": "Cutting-edge skincare research and molecular science",
+      "purpose": "Research findings, innovation pipeline, and scientific breakthroughs",
+      "member_count": 12,
+      "is_private": false,
+      "category": "Research & Innovation"
+    },
+    {
+      "id": "C006",
+      "name": "anti-inflammatory-protocols",
+      "topic": "Anti-inflammatory research and protocol development",
+      "purpose": "Specialized channel for anti-inflammatory treatment protocols",
+      "member_count": 10,
+      "is_private": false,
+      "category": "Research & Innovation"
+    },
+    {
+      "id": "C007",
+      "name": "quantum-insights",
+      "topic": "Quantum consciousness leadership discussions",
+      "purpose": "Advanced organizational consciousness and quantum development",
+      "member_count": 8,
+      "is_private": false,
+      "category": "Leadership"
+    },
+    {
+      "id": "C008",
+      "name": "global-network",
+      "topic": "International partner and distributor coordination",
+      "purpose": "Coordination with global partners across 127 countries",
+      "member_count": 16,
+      "is_private": false,
+      "category": "Operations"
+    },
+    {
+      "id": "C009",
+      "name": "spazone-professionals",
+      "topic": "SpaZone treatment protocols and therapist education",
+      "purpose": "Dedicated channel for SpaZone professional education",
+      "member_count": 14,
+      "is_private": false,
+      "category": "Education & Training"
+    },
+    {
+      "id": "C010",
+      "name": "leadership-team",
+      "topic": "Strategic direction and organizational leadership",
+      "purpose": "Leadership team coordination and strategic planning",
+      "member_count": 6,
+      "is_private": true,
+      "category": "Leadership"
+    }
+  ],
+  "members": [
+    {
+      "id": "U001",
+      "name": "Alex Reynolds",
+      "display_name": "alex.reynolds",
+      "title": "Chief Executive Officer",
+      "department": "Leadership",
+      "email": "alex@regima-zone.com",
+      "phone": "",
+      "pronouns": "",
+      "avatar_color": "#4A154B",
+      "avatar_initials": "AR",
+      "status": "active",
+      "is_admin": true,
+      "channels": ["C001", "C007", "C010", "C008"]
+    },
+    {
+      "id": "U002",
+      "name": "Dr. Sarah Mitchell",
+      "display_name": "sarah.mitchell",
+      "title": "Head of Research & Innovation",
+      "department": "Research & Innovation",
+      "email": "sarah.mitchell@regima-zone.com",
+      "phone": "",
+      "pronouns": "she/her",
+      "avatar_color": "#0F9D58",
+      "avatar_initials": "SM",
+      "status": "active",
+      "is_admin": false,
+      "channels": ["C001", "C005", "C006", "C003"]
+    },
+    {
+      "id": "U003",
+      "name": "James Thornton",
+      "display_name": "james.thornton",
+      "title": "Director of Education & Training",
+      "department": "Education & Training",
+      "email": "james.thornton@regima-zone.com",
+      "phone": "",
+      "pronouns": "he/him",
+      "avatar_color": "#F4B400",
+      "avatar_initials": "JT",
+      "status": "active",
+      "is_admin": false,
+      "channels": ["C001", "C002", "C009", "C004"]
+    },
+    {
+      "id": "U004",
+      "name": "Priya Sharma",
+      "display_name": "priya.sharma",
+      "title": "Senior Skincare Scientist",
+      "department": "Research & Innovation",
+      "email": "priya.sharma@regima-zone.com",
+      "phone": "",
+      "pronouns": "she/her",
+      "avatar_color": "#DB4437",
+      "avatar_initials": "PS",
+      "status": "active",
+      "is_admin": false,
+      "channels": ["C001", "C005", "C006", "C003"]
+    },
+    {
+      "id": "U005",
+      "name": "Marco Bellini",
+      "display_name": "marco.bellini",
+      "title": "Global Operations Manager",
+      "department": "Operations",
+      "email": "marco.bellini@regima-zone.com",
+      "phone": "",
+      "pronouns": "he/him",
+      "avatar_color": "#4285F4",
+      "avatar_initials": "MB",
+      "status": "active",
+      "is_admin": false,
+      "channels": ["C001", "C008", "C010"]
+    },
+    {
+      "id": "U006",
+      "name": "Yuki Tanaka",
+      "display_name": "yuki.tanaka",
+      "title": "Zone Concept Training Specialist",
+      "department": "Education & Training",
+      "email": "yuki.tanaka@regima-zone.com",
+      "phone": "",
+      "pronouns": "she/her",
+      "avatar_color": "#9C27B0",
+      "avatar_initials": "YT",
+      "status": "active",
+      "is_admin": false,
+      "channels": ["C001", "C002", "C009"]
+    },
+    {
+      "id": "U007",
+      "name": "Dr. Elena Vasquez",
+      "display_name": "elena.vasquez",
+      "title": "Molecular Biology Lead",
+      "department": "Research & Innovation",
+      "email": "elena.vasquez@regima-zone.com",
+      "phone": "",
+      "pronouns": "she/her",
+      "avatar_color": "#00ACC1",
+      "avatar_initials": "EV",
+      "status": "active",
+      "is_admin": false,
+      "channels": ["C001", "C005", "C006", "C007"]
+    },
+    {
+      "id": "U008",
+      "name": "Thomas Clarke",
+      "display_name": "thomas.clarke",
+      "title": "Client Services Director",
+      "department": "Client Services",
+      "email": "thomas.clarke@regima-zone.com",
+      "phone": "",
+      "pronouns": "he/him",
+      "avatar_color": "#FF7043",
+      "avatar_initials": "TC",
+      "status": "active",
+      "is_admin": false,
+      "channels": ["C001", "C004", "C009"]
+    },
+    {
+      "id": "U009",
+      "name": "Amara Osei",
+      "display_name": "amara.osei",
+      "title": "Product Development Manager",
+      "department": "Product Development",
+      "email": "amara.osei@regima-zone.com",
+      "phone": "",
+      "pronouns": "she/her",
+      "avatar_color": "#43A047",
+      "avatar_initials": "AO",
+      "status": "active",
+      "is_admin": false,
+      "channels": ["C001", "C003", "C005"]
+    },
+    {
+      "id": "U010",
+      "name": "Liam O'Brien",
+      "display_name": "liam.obrien",
+      "title": "SpaZone Training Coordinator",
+      "department": "Education & Training",
+      "email": "liam.obrien@regima-zone.com",
+      "phone": "",
+      "pronouns": "he/him",
+      "avatar_color": "#E91E63",
+      "avatar_initials": "LO",
+      "status": "active",
+      "is_admin": false,
+      "channels": ["C001", "C002", "C009", "C004"]
+    }
+  ]
+}
