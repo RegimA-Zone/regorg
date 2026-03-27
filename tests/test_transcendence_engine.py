@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Tests for Quantum Transcendence Module
+Tests for Transcendence Module
 """
 
 import pytest
@@ -10,8 +10,8 @@ from pathlib import Path
 # Add scripts directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 
-from quantum_transcendence import (
-    QuantumTranscendenceEngine,
+from transcendence_engine import (
+    TranscendenceEngine,
     MolecularConsciousnessMetrics,
     TranscendentNode,
     GlobalConsciousnessElevation,
@@ -36,7 +36,7 @@ class TestMolecularConsciousnessMetrics:
             precision_accuracy=100.0,
             genetic_optimization_level=100.0,
             cellular_awareness_index=100.0,
-            quantum_coherence_factor=100.0,
+            coherence_factor=100.0,
             molecular_integration_score=100.0,
             consciousness_alignment=100.0
         )
@@ -49,7 +49,7 @@ class TestMolecularConsciousnessMetrics:
             precision_accuracy=99.0,
             genetic_optimization_level=99.0,
             cellular_awareness_index=99.0,
-            quantum_coherence_factor=99.0,
+            coherence_factor=99.0,
             molecular_integration_score=99.0,
             consciousness_alignment=99.0
         )
@@ -62,7 +62,7 @@ class TestMolecularConsciousnessMetrics:
             precision_accuracy=50.0,
             genetic_optimization_level=50.0,
             cellular_awareness_index=50.0,
-            quantum_coherence_factor=50.0,
+            coherence_factor=50.0,
             molecular_integration_score=50.0,
             consciousness_alignment=50.0
         )
@@ -105,13 +105,13 @@ class TestTranscendentNode:
         assert 'last_sync' in data
 
 
-class TestQuantumTranscendenceEngine:
-    """Tests for QuantumTranscendenceEngine class."""
+class TestTranscendenceEngine:
+    """Tests for TranscendenceEngine class."""
 
     @pytest.fixture
     def engine(self, tmp_path):
         """Create engine with temporary directory."""
-        return QuantumTranscendenceEngine(config_path=tmp_path)
+        return TranscendenceEngine(config_path=tmp_path)
 
     def test_engine_initialization(self, engine):
         """Test engine initializes correctly."""
@@ -216,12 +216,12 @@ class TestQuantumTranscendenceEngine:
         assert 'phase' in metrics
         assert 'molecular_consciousness' in metrics
         assert 'transcendent_network' in metrics
-        assert 'quantum_targets' in metrics
+        assert 'performance_targets' in metrics
 
     def test_generate_transcendence_report(self, engine):
         """Test report generation."""
         report = engine.generate_transcendence_report()
-        assert "# RegimA Quantum Transcendence Report" in report
+        assert "# RegimA Transcendence Report" in report
         assert "Molecular Consciousness Integration" in report
         assert "Transcendent Intelligence Network" in report
 

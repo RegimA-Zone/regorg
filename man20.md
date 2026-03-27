@@ -2980,7 +2980,7 @@ Acne, Eczema, Psoriasis DIRECTIONS FOR USE: IN-SALON TREATMENT: Cleanse face and
 
 **Do a ‘Lick Test’ around the mouth to check there is no bitterness. Will possibly sting on application on very dry skins – If so, massage with Laser Azu-Repair during the Masque treatment and remove after a shorter period of time on the first session Follow with appropriate RégimA serums and creams. Always apply a RégimA day product containing sun protection. pH of product: 2.11**
 ### Notes
-## QUANTUM ELASTIN-COLLAGEN REVIVAL
+## Quantum Elastin-Collagen Revival
 Technologically superior actives derived from natural sources, provide powerful es-sential anti-inflammatory and anti-wrinkle action, amplifying collagen III synthesis, with resultant skin plumping, thickening and firming. Healing plants, algae, and a plethora of super peptides promote repair, help reduce wrinkle density and depth.
 
 Rapidly improving elasticity and providing a lifting effect, long lasting moisturisa-tion, tightening, delaying the appearance of wrinkles by protecting and stimulating healthy elastin and collagen synthesis, and is combined with Mannitol which draws active ingredients into the skin. Skin appears smoother, feels firmer and more youthful MAIN FUNCTIONS:
@@ -3044,7 +3044,7 @@ Rapidly improving elasticity and providing a lifting effect, long lasting moistu
 • Hyaluronic Acid
 
 • Retinyl Palmitate (Vitamin A)
-After Photo Shows 2 Months After Starting RégimA Treatments And Adding QUANTUM ELASTIN-COLLAGEN REVIVAL + DAILY RADI-
+After Photo Shows 2 Months After Starting RégimA Treatments And Adding Quantum Elastin-Collagen Revival + DAILY RADI-
 ANT BOOST To Her Home Care Products
 **MATRIXYL® 3000 – PEPTIDE**
 ANTI-WRINKLE COMPLEX
