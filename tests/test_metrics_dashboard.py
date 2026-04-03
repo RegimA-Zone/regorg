@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Tests for Quantum Metrics Dashboard
+Tests for Metrics Dashboard
 """
 
 import pytest
@@ -10,8 +10,8 @@ from pathlib import Path
 # Add scripts directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 
-from quantum_metrics_dashboard import (
-    QuantumMetricsDashboard,
+from metrics_dashboard import (
+    MetricsDashboard,
     Metric,
     Alert,
     MetricCategory,
@@ -125,13 +125,13 @@ class TestMetric:
         assert len(metric.history) == 100
 
 
-class TestQuantumMetricsDashboard:
-    """Tests for QuantumMetricsDashboard class."""
+class TestMetricsDashboard:
+    """Tests for MetricsDashboard class."""
 
     @pytest.fixture
     def dashboard(self, tmp_path):
         """Create dashboard with temporary directory."""
-        return QuantumMetricsDashboard(data_path=tmp_path)
+        return MetricsDashboard(data_path=tmp_path)
 
     def test_dashboard_initialization(self, dashboard):
         """Test dashboard initializes with default metrics."""
@@ -262,7 +262,7 @@ class TestQuantumMetricsDashboard:
     def test_generate_dashboard_report(self, dashboard):
         """Test report generation."""
         report = dashboard.generate_dashboard_report()
-        assert "# RegimA Quantum Metrics Dashboard Report" in report
+        assert "# RegimA Metrics Dashboard Report" in report
         assert "Key Performance Indicators" in report
         assert "Phase 3 Progress" in report
 
@@ -273,7 +273,7 @@ class TestAlertThresholds:
     @pytest.fixture
     def dashboard(self, tmp_path):
         """Create dashboard with temporary directory."""
-        return QuantumMetricsDashboard(data_path=tmp_path)
+        return MetricsDashboard(data_path=tmp_path)
 
     def test_critical_threshold_alert(self, dashboard):
         """Test critical alert is created when below threshold."""
